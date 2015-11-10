@@ -9,7 +9,7 @@ Meteor.startup(function () {
 Template.userPicklistModal.events({
   'click #userPicklistCancelButton': function (){
     Session.set('show_users_picklist', false);
-    Session.set('show_reactive_overlay', false);
+    Session.set('showReactiveOverlay', false);
   },
   'change #userSearchInput': function (){
     Session.set('userSearchFilter', $('#userSearchInput').val());
@@ -19,14 +19,17 @@ Template.userPicklistModal.events({
   },
   "click #userPicklistOkButton": function (event, template) {
     Session.set('show_users_picklist', false);
-    Session.set('show_reactive_overlay', false);
+    Session.set('showReactiveOverlay', false);
   },
   'click .userRow': function (){
     Session.set("selectedUserId", this._id);
     Session.set('selectedUserName', this.profile.fullName);
     Session.set('userSearchFilter', this.profile.fullName);
     Session.set('show_users_picklist', false);
-    Session.set('show_reactive_overlay', false);
+    Session.set('showReactiveOverlay', false);
+
+    $('input[name="Patient_ID"]').val(this._id);
+    $('input[name="PatientName"]').val(this.name);
   }
 });
 
