@@ -1,6 +1,6 @@
 Package.describe({
   name: 'clinical:users-picklist',
-  version: '1.0.6',
+  version: '1.0.7',
   summary: 'User Picklist modal for  ClinicalFramework apps.',
   git: 'https://github.com/clinical-meteor/clinical-keybindings',
   documentation: 'README.md'
@@ -13,6 +13,7 @@ Package.onUse(function (api) {
   api.use('grove:less@0.1.1');
   api.use('awatson1978:fonts-helveticas@1.0.4');
   api.use('clinical:modals@1.0.6');
+  api.use('clinical:active-layout');
 
   api.addFiles('client/userPicklistModal/userPicklistModal.html', 'client');
   api.addFiles('client/userPicklistModal/userPicklistModal.js', 'client');
